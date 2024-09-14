@@ -1,0 +1,27 @@
+---
+title: "p8105_HW1"
+output: html_document
+date: "2024-09-14"
+---
+
+## P8105 HW1
+
+```{r, echo = FALSE, message= FALSE}
+### Package setup, not included in Rmd file
+library(ggplot2)
+```
+
+
+### Problem 1
+
+```{r}
+
+```
+
+### Problem 2
+
+```{r}
+
+```
+
+
