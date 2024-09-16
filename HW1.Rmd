@@ -9,14 +9,41 @@ date: "2024-09-14"
 ```{r, echo = FALSE, message= FALSE}
 ### Package setup, not included in Rmd file
 library(ggplot2)
+library(dplyr)
 ```
 
 
 ### Problem 1
 
 ```{r}
+### Import dataset
+data("penguins", package = "palmerpenguins")
+### Descriptive analysis
+num_var = ncol(penguins)
+num_row = nrow(penguins)
+print(paste("There are", num_var, "columns and", num_row, "rows in this dataset."))
+flipper_length = penguins %>% pull(flipper_length_mm)
+mean_FL = mean(na.omit(flipper_length))
+print(paste("The mean flipper length of the penguins is", round(mean_FL, 2), "mm."))
 
 ```
+
+Description:
+There are 8 variables in total in this dataset.
+- Species: Qualitative with 3 levels: Adelie, Chinstrap, Gentoo; the specific species of the penguin. 
+- Island: Qualitative with 3 levels: Biscoe, Dream, Torgersen; the island the penguin lives.
+- bill_length_mm: Quantitative, length of the penguin's bill in mm
+- bill_depth_mm: Quantitative, depth of the penguin's bill in mm
+- flipper_length_mm: Quantitative, length of the penguin's flipper in mm
+- body_mass_g: Quantitative, weight of the penguin in gram
+- sex: Qualitative with 2 levels: male, female; sex of the penguin
+- year: Quantitative ordinal variable.
+Size of the dataset:
+- There are 8 columns and 344 rows in this dataset.
+Mean flipper length:
+The mean flipper length of the penguins is 200.92 mm.
+
+
 
 ### Problem 2
 
